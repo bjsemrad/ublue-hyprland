@@ -15,9 +15,8 @@ dnf5 install -y tmux
 # Use a COPR Example:
 #
 dnf5 -y copr enable ublue-os/staging
-
-dnf5 -y copr enable ublue-os/staging
-
+dnf5 -y copr enable ublue-os/packages
+dnf5 -y copr enable solopasha/hyprland
 
 dnf5 -y install solopasha/hyprland
 
