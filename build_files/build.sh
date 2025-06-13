@@ -17,23 +17,47 @@ dnf5 install -y tmux
 dnf5 -y copr enable ublue-os/staging
 dnf5 -y copr enable ublue-os/packages
 dnf5 -y copr enable solopasha/hyprland
+dnf5 -y copr enable xeriab/ghostty
+dnf5 -y copr enable hazel-bunny/ricing
 
-dnf5 install -y --setopt=install_weak_deps=False \
+dnf5 install -y \
     xdg-desktop-portal-hyprland \
     hyprland \
     hyprpaper \
-    hyprland-qtutils \
     hyprpolkitagent \
-    waybar \
-    wdisplays \
-    pavucontrol \
+    hyprsysteminfo \
+    hyprshot \
     hyprlock \
     hypridle \
+    waybar \
+    rofi-wayland \
+    wlogout \
+    cliphist \
+    wl-clipboard \
+    dunst \
+    udiskie \
+    kitty \
+    wireplumber \
+    pavucontrol \
     NetworkManager-tui \
-    uwsm
+    thunar \
+    uwsm \
+    grim \
+    slurp \
+    pamixer \
+    breeze-cursor-theme \
+    kora-icon-theme \
+    lm_sensors \
+    fastfetch \
+    btop \
+    gnome-disk-utility
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable ublue-os/staging
+dnf5 -y copr disable ublue-os/packages
+dnf5 -y copr disable solopasha/hyprland
+dnf5 -y copr disable xeriab/ghostty
+dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
 
