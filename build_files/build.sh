@@ -60,7 +60,12 @@ dnf5 -y copr disable xeriab/ghostty
 dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
-mkdir -m 0755 /nix
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
+  --extra-conf "sandbox = false" \
+  --no-start-daemon \
+  --no-confirm
+
+nix run nixpkgs#hello
 #curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm -- --no-start-daemon
 
 systemctl enable podman.socket
