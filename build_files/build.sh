@@ -62,7 +62,7 @@ dnf5 -y copr disable hazel-bunny/ricing
 #### Example for enabling a System Unit File
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
   --extra-conf "sandbox = false" \
-  --no-start-daemon \
+  --init none \
   --no-confirm
 
 nix run nixpkgs#hello
