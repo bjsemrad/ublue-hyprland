@@ -60,6 +60,9 @@ dnf5 -y copr disable xeriab/ghostty
 dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
+
+mkdir -p /nix/var/determinate /root/.nix-profile /nix/var/nix/profiles/default
+
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
   --extra-conf "sandbox = false" \
   --init none \
