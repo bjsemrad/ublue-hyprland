@@ -60,14 +60,15 @@ dnf5 -y copr disable xeriab/ghostty
 dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
+toolbox create --image ghcr.io/thrix/nix-toolbox:42
 
 #mkdir -p /nix/var/determinate /root/.nix-profile /nix/var/nix/profiles/default
 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
-  --init none \
-  --no-confirm
+#curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
+#  --init none \
+#  --no-confirm
 
-nix run nixpkgs#hello
+#nix run nixpkgs#hello
 #curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm -- --no-start-daemon
 
 systemctl enable podman.socket
