@@ -67,7 +67,7 @@ export NIX_STATE_DIR=/var/lib/nix/var
 export NIX_CONF_DIR=/var/lib/nix/etc
 
 # Set install location
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --daemon --no-confirm --destdir /var/lib/nix
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm --destdir /var/lib/nix
 
 # Add environment to skeleton so new users get it
 cat << EOF > /etc/profile.d/nix.sh
