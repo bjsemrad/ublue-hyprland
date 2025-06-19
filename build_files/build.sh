@@ -66,7 +66,8 @@ export NIX_DEST="/var/lib/nix"
 # Download and install Determinate Nix Installer
 NIX_INSTALL_DIR=$NIX_DEST curl -L https://install.determinate.systems/nix | bash -s -- install \
   --no-confirm \
-  --extra-conf "experimental-features = nix-command flakes"
+  --extra-conf "experimental-features = nix-command flakes" \
+  --no-start-daemon
 
 # Set up environment script for new users
 mkdir -p /etc/profile.d
