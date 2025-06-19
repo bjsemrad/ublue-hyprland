@@ -61,20 +61,24 @@ dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
 
-#mkdir -p /nix/var/determinate /root/.nix-profile /nix/var/nix/profiles/default
-export NIX_STORE_DIR=/var/lib/nix/store
-export NIX_STATE_DIR=/var/lib/nix/var
-export NIX_CONF_DIR=/var/lib/nix/etc
+export NIX_DEST="/var/lib/nix"
 
-# Set install location
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate --no-confirm -- --destdir /var/lib/nix
+# Download and install Determinate Nix Installer
+curl -L https://install.determinate.systems/nix | bash -s -- install \
+  --no-confirm \
+  --extra-conf "experimental-features = nix-command flakes" \
+  --destdir "$NIX_DEST"
 
-# Add environment to skeleton so new users get it
+# Set up environment script for new users
+mkdir -p /etc/profile.d
+
 cat << EOF > /etc/profile.d/nix.sh
-export NIX_STORE_DIR=/var/lib/nix/store
-export NIX_STATE_DIR=/var/lib/nix/var
-export NIX_CONF_DIR=/var/lib/nix/etc
-source /var/lib/nix/etc/profile.d/nix.sh
+export NIX_INSTALL_ROOT=$NIX_DEST
+export PATH=\$NIX_INSTALL_ROOT/bin:\$PATH
+export NIX_CONF_DIR=\$NIX_INSTALL_ROOT/etc
+export NIX_PATH=nixpkgs=channel:nixos-unstable
+source \$NIX_INSTALL_ROOT/etc/profile.d/nix.sh
 EOF
+chmod +x /etc/profile.d/nix.sh
 
 systemctl enable podman.socket
