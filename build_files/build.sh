@@ -64,11 +64,11 @@ dnf5 -y copr disable hazel-bunny/ricing
 export NIX_DEST="/var/lib/nix"
 
 # Download and install Determinate Nix Installer
-NIX_INSTALL_DIR=$NIX_DEST curl -L https://install.determinate.systems/nix | sh -s -- install \
+NIX_INSTALL_DIR=$NIX_DEST curl -L https://install.determinate.systems/nix | sh -s -- \
   --determinate \
   --no-confirm \
   --init none \
-  --extra-conf "experimental-features = nix-command flakes" \
+  --extra-conf "experimental-features = nix-command flakes"
 
 # Set up environment script for new users
 mkdir -p /etc/profile.d
