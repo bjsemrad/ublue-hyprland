@@ -67,7 +67,7 @@ export NIX_STATE_DIR=/var/lib/nix/var
 export NIX_CONF_DIR=/var/lib/nix/etc
 
 # Set install location
-curl -L https://nixos.org/nix/install | bash -s -- --no-daemon --destdir /var/lib/nix
+curl -L https://nixos.org/nix/install | bash -s -- --daemon --yes --destdir /var/lib/nix
 
 # Add environment to skeleton so new users get it
 cat << EOF > /etc/profile.d/nix.sh
