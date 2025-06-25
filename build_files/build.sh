@@ -61,23 +61,23 @@ dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
 
-export NIX_DEST="/var/lib/nix"
+#export NIX_DEST="/var/lib/nix"
 
 # Download and install Determinate Nix Installer
-NIX_INSTALL_DIR=$NIX_DEST curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate \
-  --no-confirm \
-  --extra-conf "experimental-features = nix-command flakes"
+#NIX_INSTALL_DIR=$NIX_DEST curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate \
+#  --no-confirm \
+#  --extra-conf "experimental-features = nix-command flakes"
 
 # Set up environment script for new users
-mkdir -p /etc/profile.d
+#mkdir -p /etc/profile.d
 
-cat << EOF > /etc/profile.d/nix.sh
-export NIX_INSTALL_ROOT=$NIX_DEST
-export PATH=\$NIX_INSTALL_ROOT/bin:\$PATH
-export NIX_CONF_DIR=\$NIX_INSTALL_ROOT/etc
-export NIX_PATH=nixpkgs=channel:nixos-unstable
-source \$NIX_INSTALL_ROOT/etc/profile.d/nix.sh
-EOF
-chmod +x /etc/profile.d/nix.sh
+#cat << EOF > /etc/profile.d/nix.sh
+#export NIX_INSTALL_ROOT=$NIX_DEST
+#export PATH=\$NIX_INSTALL_ROOT/bin:\$PATH
+#export NIX_CONF_DIR=\$NIX_INSTALL_ROOT/etc
+#export NIX_PATH=nixpkgs=channel:nixos-unstable
+#source \$NIX_INSTALL_ROOT/etc/profile.d/nix.sh
+#EOF
+#chmod +x /etc/profile.d/nix.sh
 
 systemctl enable podman.socket
