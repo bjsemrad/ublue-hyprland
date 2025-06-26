@@ -63,7 +63,11 @@ dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
 
+#### Setup Nix paths
+cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
 ln -s /var/nix /nix
+
+
 #export NIX_DEST="/var/lib/nix"
 
 # Download and install Determinate Nix Installer
