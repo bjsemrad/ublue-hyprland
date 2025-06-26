@@ -50,7 +50,8 @@ dnf5 install -y \
     lm_sensors \
     fastfetch \
     btop \
-    gnome-disk-utility
+    gnome-disk-utility \
+    alacritty
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable ublue-os/staging
