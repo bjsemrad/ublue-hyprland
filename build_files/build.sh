@@ -51,7 +51,8 @@ dnf5 install -y \
     fastfetch \
     btop \
     gnome-disk-utility \
-    alacritty
+    alacritty \
+    wayvnc
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable ublue-os/staging
