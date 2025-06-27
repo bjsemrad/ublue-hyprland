@@ -65,6 +65,6 @@ dnf5 -y copr disable hazel-bunny/ricing
 
 #cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
 
-#ln -s /var/nix /nix
+ln -s /var/home/bria/.local/share/nix /nix
 
 systemctl enable podman.socket
