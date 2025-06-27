@@ -63,28 +63,8 @@ dnf5 -y copr disable hazel-bunny/ricing
 
 #### Example for enabling a System Unit File
 
-#### Setup Nix paths
-cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
-ln -s /var/nix /nix
+#cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
 
-
-#export NIX_DEST="/var/lib/nix"
-
-# Download and install Determinate Nix Installer
-#NIX_INSTALL_DIR=$NIX_DEST curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --determinate \
-#  --no-confirm \
-#  --extra-conf "experimental-features = nix-command flakes"
-
-# Set up environment script for new users
-#mkdir -p /etc/profile.d
-
-#cat << EOF > /etc/profile.d/nix.sh
-#export NIX_INSTALL_ROOT=$NIX_DEST
-#export PATH=\$NIX_INSTALL_ROOT/bin:\$PATH
-#export NIX_CONF_DIR=\$NIX_INSTALL_ROOT/etc
-#export NIX_PATH=nixpkgs=channel:nixos-unstable
-#source \$NIX_INSTALL_ROOT/etc/profile.d/nix.sh
-#EOF
-#chmod +x /etc/profile.d/nix.sh
+#ln -s /var/nix /nix
 
 systemctl enable podman.socket
