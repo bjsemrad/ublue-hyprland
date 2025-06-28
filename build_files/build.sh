@@ -20,6 +20,7 @@ dnf5 -y copr enable ublue-os/packages
 dnf5 -y copr enable solopasha/hyprland
 dnf5 -y copr enable xeriab/ghostty
 dnf5 -y copr enable hazel-bunny/ricing
+dnf5 -y copr enable mecattaf/duoRPM 
 
 dnf5 install -y \
     xdg-desktop-portal-hyprland \
@@ -62,6 +63,8 @@ dnf5 -y copr disable ublue-os/packages
 dnf5 -y copr disable solopasha/hyprland
 dnf5 -y copr disable xeriab/ghostty
 dnf5 -y copr disable hazel-bunny/ricing
+dnf5 -y copr disable mecattaf/duoRPM 
+
 
 #### Example for enabling a System Unit File
 
