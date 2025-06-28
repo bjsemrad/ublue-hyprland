@@ -53,7 +53,8 @@ dnf5 install -y \
     btop \
     gnome-disk-utility \
     alacritty \
-    wayvnc
+    wayvnc \
+    ghostty
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 dnf5 -y copr disable ublue-os/staging
