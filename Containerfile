@@ -2,7 +2,7 @@
 FROM scratch AS ctx
 COPY build_files /
 COPY nix.conf /nix.conf
-
+COPY udev/60-openrgb.rules /
 # Base Image
 FROM ghcr.io/ublue-os/bluefin-dx:latest
 

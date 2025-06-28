@@ -67,9 +67,9 @@ dnf5 -y copr disable mecattaf/duoRPM
 
 
 #### Example for enabling a System Unit File
-
+cp /ctx/60-openrgb.rules /usr/lib/udev/rules.d/
 #cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
 
-ln -s /var/home/bria/.local/share/nix /nix
+#ln -s /var/home/brian<Find>/.local/share/nix /nix
 
 systemctl enable podman.socket
