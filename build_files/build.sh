@@ -68,8 +68,9 @@ dnf5 -y copr disable mecattaf/duoRPM
 
 #### Example for enabling a System Unit File
 cp /ctx/60-openrgb.rules /usr/lib/udev/rules.d/
-udevadm control --reload-rules
-udevadm trigger
+chmod 644 /etc/udev/rules.d/60-openrgb.rules
+#udevadm control --reload-rules
+#udevadm trigger
 #cp /ctx/nix.conf /usr/lib/tmpfiles.d/nix.conf
 
 #ln -s /var/home/brian<Find>/.local/share/nix /nix
